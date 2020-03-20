@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(https://i.pinimg.com/564x/00/b0/1c/00b01cff53dc5dfb91c618ce55b89c35.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 550px;
+    height: 100%;
+}
+
+.page{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #144361;
+}
+
+.page img{
+    width: 100%;
+}
+
+@media screen and (max-width: 576px) {
+    .page{
+        flex-direction: column-reverse;
+        margin-top: 1em;
+    }
+}

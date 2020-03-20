@@ -1,6 +1,11 @@
 body{
     margin: 0;
     padding: 0;
+    background: url(https://cdn.pixabay.com/photo/2019/09/11/14/08/rainbow-4468783_960_720.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 550px;
+    height: 100%;
 }
 
 .header{
