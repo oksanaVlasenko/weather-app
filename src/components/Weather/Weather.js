@@ -1,12 +1,13 @@
 import React from 'react';
-import Card from '../Card/Card';
-import Error from '../Error/Error'
+import Error from '../Error/Error';
+import FormatCard from '../FormatCard/FormatCard'
+import Header from '../Header/Header'
 import './Weather.css'
 
 const openWeatherApiKey = 'c792484ade42380886f51003cfcaf04d';
 const weatherApiLink = `https://api.openweathermap.org/data/2.5/forecast?q=Kharkiv&lang=en&units=metric&APPID=${openWeatherApiKey}`;
 
-class WeekContainer extends React.Component {
+class Weather extends React.Component {
   state = {
     days: [],
     isError: false
@@ -22,13 +23,10 @@ class WeekContainer extends React.Component {
         console.log(this.state.days)
     })
     .catch(error => {
-      console.log('error -', error);
+      console.error(error);
+      
       this.setState({isError: true});
     })
-  }
-
-  formatCards = () => {
-    return this.state.days.map((day, index) => <Card day={day} key={index}/>)
   }
 
   render() {
@@ -39,16 +37,13 @@ class WeekContainer extends React.Component {
     }
     return (
       <>
-          <div className="header">
-              <h1>Weather Forecast</h1>
-              <h3>Kharkiv</h3>
-          </div>
+        <Header />
         <div className="main">
-          {this.formatCards()}
+          <FormatCard days={this.state.days} />
         </div>
       </>
     )
   }
 }
 
-export default WeekContainer
+export default Weather
